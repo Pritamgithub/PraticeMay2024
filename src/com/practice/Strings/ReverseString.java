@@ -3,6 +3,7 @@ package com.practice.Strings;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ReverseString {
@@ -11,49 +12,77 @@ public class ReverseString {
 
 		String name = "Pritam";
 
-		//reverseusingCharacterArray(name);
-		//reverseusingtoCharacterArray(name);
+		// reverseusingCharacterArray(name);
+		// reverseusingtoCharacterArray(name);
+		reverseusingStringBuilder(name);
+		reverseusingStringBuffer(name);
+		reverseusingList(name);
+
+	}
+
+	private static void reverseusingList(String name) {
+	
+		List<String> liststring =new LinkedList<String>();
+		
+		
+		
+	}
+
+	private static void reverseusingStringBuffer(String name) {
+		StringBuffer sbuffer = new StringBuffer();
+		sbuffer.append(name);
+		sbuffer.reverse();
+		System.out.println("Printing using StringBuffer " + sbuffer);
+
+	}
+
+	private static void reverseusingStringBuilder(String name) {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(name);
+		System.out.println(sb);
+		System.out.println(sb.reverse());
+		System.out.println("Printing using String Builder " + sb);
+
 	}
 
 	private static void reverseusingtoCharacterArray(String name) {
 
-		char[]nameArray= name.toCharArray();//[p,r,i,t,a,m];
+		char[] nameArray = name.toCharArray();// [p,r,i,t,a,m];
 		char[] helperArray = new char[nameArray.length];
-		//System.out.println("printing helperArray " + " "+nameArray[5] + " I am the length "+ nameArray.length);
-		
-		for(int i=nameArray.length-1;i>=0;i--)
-		{
-			helperArray[nameArray.length -1-i]=nameArray[i];
+		// System.out.println("printing helperArray " + " "+nameArray[5] + " I am the
+		// length "+ nameArray.length);
+
+		for (int i = nameArray.length - 1; i >= 0; i--) {
+			helperArray[nameArray.length - 1 - i] = nameArray[i];
 		}
-		for(int j=0;j<helperArray.length;j++) {
+		for (int j = 0; j < helperArray.length; j++) {
 			System.out.println(helperArray[j]);
 		}
-		
-		System.out.println(" This the helper array printing from Arrays to string() "+Arrays.toString(helperArray));
-		
+
+		System.out.println(" This the helper array printing from Arrays to string() " + Arrays.toString(helperArray));
+
 	}
 
 	private static void reverseusingCharacterArray(String name) {
 		// TODO Auto-generated method stub
 		// convert the name into character array
-		char[] nameArray =new char[name.length()];
-		//created a nameArray with name.length;
-		
-		int i=0;
-		for (i=0;i<name.length();i++)
-		{
-			nameArray[i]= name.charAt(i);
+		char[] nameArray = new char[name.length()];
+		// created a nameArray with name.length;
+
+		int i = 0;
+		for (i = 0; i < name.length(); i++) {
+			nameArray[i] = name.charAt(i);
 		}
-		
-		for (int j=nameArray.length;j>0;j--)
-		{
-			System.out.print(""+nameArray[j-1]);
+
+		for (int j = nameArray.length; j > 0; j--) {
+			System.out.print("" + nameArray[j - 1]);
 		}
 		System.out.println();
-		
+
 		System.out.println("This is the name array ");
 		System.out.println(Arrays.toString(nameArray));
-		
+
 	}
 
 }
