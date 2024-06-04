@@ -1,12 +1,9 @@
 package com.practice.Set;
 
-import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
-import java.util.Stack;
 
 public class SetOperations {
 	public static void main(String[] args) {
@@ -28,8 +25,11 @@ public class SetOperations {
 		stringLinkedHashset.add("Hayabusa");
 		
 		System.out.println("Printing Set's implementation to LinkedHashSet "+ stringLinkedHashset);
-		
-		
+		//stringLinkedHashset.
+		for (Iterator<String> iterator = stringLinkedHashset.iterator(); iterator.hasNext();) {
+			String string = (String) iterator.next();
+			System.out.println("coming using iterator "+string);
+		}
 		
 	}
 }
